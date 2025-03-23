@@ -1,46 +1,70 @@
 
 #include <stdio.h>
+// Função recursiva para mover torre.
+void moverTorre(int count) {
+    if (count > 0)
+    {
+        printf("Direita > \n");
+        moverTorre(count -1);
+    }
+    
+}
+
+void moverBispo(int count) {
+    if (count > 0)
+    {
+        printf("Cima, Direita \n");
+        moverBispo(count - 1);
+    }
+   
+}
+
+void moverRainha(int count) {
+    if (count > 0)
+    {
+        printf("< Esquerda \n");
+        moverRainha(count - 1);
+    }
+    
+}
+
+void moverCavalo() {
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 1; j++)
+            printf("Cima");
+    }
+
+    for(int k =0; k < 1; k++) {
+        printf("Direita");
+    }
+}
 
 int main() {
 
-    //implementação da Torre, utilizando o FOR.
+    //Definindo contador e chamando a função de mover a Torre.
     printf("O movimento da torre na jogada é: \n");
-
-    //A peça se moverá 5 vezes, i é incrementado a cada movimento.(Direita)
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Direita > \n");
-    }
+    moverTorre(5);
     printf("\n");
+    
 
-    //implementação do Bispo, utilizando o Do While.
+    //Definindo contador e chamando a função de mover o Bispo.
     printf("O movimento do Bispo é: \n");
-
-    //A peça se moverá 5 vezes, movimento é incrementado a cada movimento.(Diagonal)
-
-    int movimento = 0;
-    do
-    {
-        printf("Cima, Direita \n");
-        movimento++;
-
-    } while (movimento < 5);
+    moverBispo(5);
     printf("\n");
 
-    //implementação da Rainha, utilizanod o While.
-    
+    //Definindo contador e chamando a função de mover a Rainha.
     printf("O movimento da Rainha é: \n");
+    moverRainha(8);
+    printf("\n");
 
-    //A peça se moverá 8 vezes, rainha é incrementado a cada movimento.(Esquerda)
-    int rainha = 0;
 
-    while (rainha < 8)
-    {
-        printf("< Esquerda \n");
-        rainha++;
-    }
-    
+    // Implementação do movimento do cavalo.
+    printf("O movimento do cavalo é: \n");
+    moverCavalo();
+    printf("\n");
     
     return 0;
 
 }
+
+
